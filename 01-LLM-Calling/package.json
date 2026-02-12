@@ -1,0 +1,25 @@
+{
+  "name": "01-llm-calling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "llm": "./llm-cli.js",
+    "textify": "./textify.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^1.16.0",
+    "cli-markdown": "^3.5.1",
+    "dotenv": "^17.2.1",
+    "marked": "^16.2.1",
+    "ora": "^8.2.0",
+    "readline-sync": "^1.4.10"
+  }
+}
