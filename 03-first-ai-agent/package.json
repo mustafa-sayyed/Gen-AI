@@ -1,0 +1,27 @@
+{
+  "name": "03-first-ai-agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "start-agent": "ts-node agent.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.22.0",
+  "dependencies": {
+    "@google/genai": "^1.41.0",
+    "dotenv": "^17.2.4",
+    "openai": "^6.21.0",
+    "ora": "^9.3.0",
+    "readline-sync": "^1.4.10",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "@types/readline-sync": "^1.4.8"
+  }
+}
