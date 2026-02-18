@@ -1,3 +1,6 @@
+# Ignore the agent.ts file
+agent.ts
+
 # Logs
 logs
 *.log
