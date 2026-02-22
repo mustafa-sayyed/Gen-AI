@@ -3,6 +3,7 @@ import {
   ConditionalEdgeRouter,
   END,
   GraphNode,
+  MemorySaver,
   START,
   StateGraph,
 } from "@langchain/langgraph";
@@ -16,6 +17,7 @@ const model = new ChatGroq({
   apiKey: process.env.GROQ_API_KEY!,
 });
 
+const checkpointer = new MemorySaver();
 const tools = Object.values(toolsByName);
 const modelWithTools = model.bindTools(tools);
 
@@ -87,7 +89,7 @@ const agent = new StateGraph(state)
   .addEdge(START, "llmCall")
   .addConditionalEdges("llmCall", shouldContinue, ["toolNode", END])
   .addEdge("toolNode", "llmCall")
-  .compile();
+  .compile({ checkpointer });
 
 while (true) {
   const question = rl.prompt({ min: 1, prompt: "Ask -> " });
@@ -98,9 +100,10 @@ while (true) {
   }
   if (question === "exit") break;
 
-  const result = await agent.invoke({
-    messages: [new HumanMessage(question)],
-  });
+  const result = await agent.invoke(
+    { messages: [new HumanMessage(question)] },
+    { configurable: { thread_id: "1" } },
+  );
 
   const answer = result.messages.at(-1)?.content;
   console.log("AI: ", answer + "\n");
