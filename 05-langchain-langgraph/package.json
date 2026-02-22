@@ -3,16 +3,27 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-langchain": "ts-node langchain.ts",
+    "dev-langgraph": "ts-node langgraph.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.22.0",
   "dependencies": {
+    "@langchain/groq": "^1.1.2",
+    "@langchain/langgraph": "^1.1.5",
     "@types/node": "^25.3.0",
     "dotenv": "^17.3.1",
-    "groq-sdk": "^0.37.0"
+    "groq-sdk": "^0.37.0",
+    "langchain": "^1.2.25",
+    "readline-sync": "^1.4.10",
+    "ts-node": "^10.9.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/readline-sync": "^1.4.8"
   }
 }
