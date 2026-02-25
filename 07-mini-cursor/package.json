@@ -1,0 +1,21 @@
+{
+  "name": "07-mini-cursor",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@langchain/google": "^0.1.2",
+    "@langchain/groq": "^1.1.2",
+    "@types/readline-sync": "^1.4.8",
+    "groq-sdk": "^0.37.0",
+    "langchain": "^1.2.27",
+    "readline-sync": "^1.4.10",
+    "zod": "^4.3.6"
+  }
+}
